@@ -9,13 +9,10 @@ def is_prime(number):
                 if (number % i) == 0:
                     is_prime_number = True
                     break
-            
+
             if is_prime_number:
                 is_prime_number = False
             else:
                 is_prime_number = True
 
     return is_prime_number
-
-
-print(is_prime(20))

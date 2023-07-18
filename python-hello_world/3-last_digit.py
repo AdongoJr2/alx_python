@@ -2,7 +2,11 @@
 import random
 number = random.randint(-10000, 10000)
 
+is_number_negative = number < 0
 last_digit = int(str(number)[-1], base=10)
+
+if is_number_negative:
+    last_digit = -last_digit
 
 if last_digit > 5:
     print("Last digit of {} is {} and is greater than 5".format(number, last_digit))

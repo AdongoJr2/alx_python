@@ -121,4 +121,6 @@ class Rectangle(Base):
         Returns:
             str: [Rectangle] (`id`) `x`/`y` - `width`/`height`
         """
-        return "[Rectangle] ({id}) {x}/{y} - {width}/{height}".format(id=self.id, x=self.x, y=self.y, width=self.width, height=self.height)
+        return "[Rectangle] ({id}) {x}/{y} - {width}/{height}".format(
+            id=self.id, x=self.x, y=self.y, width=self.width, height=self.height
+        )

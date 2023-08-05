@@ -58,13 +58,42 @@ class Rectangle(Base):
         self.__y = value
 
     def __integer_check(self, value, attribute_name=""):
+        """Checks whether the value passed is an integer
+
+        Args:
+            value (Any): The value to check
+            attribute_name (str, optional): The property name. Defaults to "".
+
+        Raises:
+            TypeError: Raised when the `value` is not an integer
+        """
+
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(attribute_name))
 
     def __gt_0_check(self, value, attribute_name=""):
+        """Check to ensure that the value passed is greater than zero (0)
+
+        Args:
+            value (Any): The value to check
+            attribute_name (str, optional): The property name. Defaults to "".
+
+        Raises:
+            ValueError: Raised when `value` is less than zero (0)
+        """
         if value <= 0:
             raise ValueError("{} must be > 0".format(attribute_name))
 
     def __gte_0_check(self, value, attribute_name=""):
+        """Check to ensure that the value passed is greater than or equal to zero (0)
+
+        Args:
+            value (Any): The value to check
+            attribute_name (str, optional): The property name. Defaults to "".
+
+        Raises:
+            ValueError: Raised when `value` is less than or equal to zero (0)
+        """
+
         if value < 0:
             raise ValueError("{} must be >= 0".format(attribute_name))

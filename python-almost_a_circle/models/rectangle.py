@@ -107,10 +107,13 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Prints in stdout the Rectangle instance with the character #"""
+        """Prints in stdout the Rectangle instance with the character #
+        taking care of `x` and `y`
+        """
 
-        for _ in range(self.height):
-            for _ in range(self.width):
+        for i in range(self.height):
+            print("#".rjust(self.x + 1), end="")
+            for j in range(self.width):
                 print("#", end="")
 
             print()

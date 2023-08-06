@@ -4,16 +4,16 @@
 from requests import get
 
 if __name__ == "__main__":
-	response = get("https://alu-intranet.hbtn.io/status")
-	content = str(response.content, "UTF-8")
+    response = get("https://alu-intranet.hbtn.io/status")
+    content = str(response.content, "UTF-8")
 
-	formatted_response = """
+    formatted_response = """
 Body response:
 	- type: {}
 	- content: {}
 """.strip().format(type(content), content)
 
-	print(formatted_response)
+    print(formatted_response)
 
-	# print("- type: {}".format(type(content)))
-	# print("- content: {}".format(content))
+    # print("- type: {}".format(type(content)))
+    # print("- content: {}".format(content))

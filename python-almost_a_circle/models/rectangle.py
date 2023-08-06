@@ -136,6 +136,7 @@ class Rectangle(Base):
         )
 
     def update(self, *args):
+        """ assigns an argument to each attribute"""
         try:
             self.id = args[0]
         except IndexError:

@@ -140,7 +140,7 @@ class Rectangle(Base):
 
         if args is not None and len(args) > 0:
             try:
-                self["id"] = args[0]
+                self.id = args[0]
             except IndexError:
                 pass
 

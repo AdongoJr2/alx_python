@@ -113,7 +113,7 @@ class Rectangle(Base):
 
         for i in range(self.height):
             print("#".rjust(self.x + 1), end="")
-            for j in range(self.width):
+            for j in range(self.width - 1):
                 print("#", end="")
 
             print()

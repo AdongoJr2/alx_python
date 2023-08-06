@@ -9,8 +9,8 @@ if __name__ == "__main__":
 
     formatted_response = """
 Body response:
-	- type: {}
-	- content: {}
+\t- type: {}
+\t- content: {}
 """.strip().format(type(content), content)
 
     print(formatted_response)

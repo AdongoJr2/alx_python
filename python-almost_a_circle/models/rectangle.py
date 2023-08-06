@@ -135,29 +135,34 @@ class Rectangle(Base):
             width=self.width, height=self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns an argument to each attribute"""
-        try:
-            self.id = args[0]
-        except IndexError:
-            pass
 
-        try:
-            self.width = args[1]
-        except IndexError:
-            pass
+        if args is not None and len(args) > 0:
+            try:
+                self["id"] = args[0]
+            except IndexError:
+                pass
 
-        try:
-            self.height = args[2]
-        except IndexError:
-            pass
+            try:
+                self.width = args[1]
+            except IndexError:
+                pass
 
-        try:
-            self.x = args[3]
-        except IndexError:
-            pass
+            try:
+                self.height = args[2]
+            except IndexError:
+                pass
 
-        try:
-            self.y = args[4]
-        except IndexError:
-            pass
+            try:
+                self.x = args[3]
+            except IndexError:
+                pass
+
+            try:
+                self.y = args[4]
+            except IndexError:
+                pass
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

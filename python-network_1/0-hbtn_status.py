@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 """My module"""
 
 from requests import get

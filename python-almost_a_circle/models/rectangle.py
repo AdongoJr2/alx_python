@@ -112,7 +112,12 @@ class Rectangle(Base):
         """
 
         for i in range(self.height):
+            if i == 0:
+                for _ in range(self.y):
+                    print()
+
             print("#".rjust(self.x + 1), end="")
+
             for j in range(self.width - 1):
                 print("#", end="")
 

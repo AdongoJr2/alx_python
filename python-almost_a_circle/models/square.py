@@ -20,3 +20,12 @@ class Square(Rectangle):
             x=self.x, y=self.y,
             size=self.width
         )
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value

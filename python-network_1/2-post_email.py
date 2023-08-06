@@ -9,3 +9,4 @@ if __name__ == "__main__":
     email = sys.argv[2]
 
     response = requests.post(url, {}, params={"email": email})
+    print(response.content.decode())

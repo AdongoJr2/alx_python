@@ -13,7 +13,7 @@ if __name__ == "__main__":
     except IndexError:
         pass
 
-    response = requests.post(url, {}, params={"q": q})
+    response = requests.post(url, {"q": q})
 
     try:
         jsonResponse = response.json()

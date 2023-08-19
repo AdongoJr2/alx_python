@@ -36,9 +36,9 @@ if __name__ == "__main__":
     #     state = row[2]
     #     print("{}".format(state), end=", ")
     # print("")
-    
+
     res = map(result_formatter, result)
-    
+
     print(res)
 
     cur.close()

@@ -27,19 +27,22 @@ if __name__ == "__main__":
 
     result = cur.fetchall()
 
-    def result_formatter(results):
-        for item in results:
-            print(item, end=", ")
-        print('')  # for new line
+    # def result_formatter(results):
+    #     for item in results:
+    #         print(item, end=", ")
+    #     print('')  # for new line
 
-    # for row in result:
-    #     state = row[2]
-    #     print("{}".format(state), end=", ")
-    # print("")
+    # res = map(result_formatter, result)
 
-    res = map(result_formatter, result)
+    # print(tuple(res))
 
-    print(tuple(res))
+    my_list = []
+
+    for row in result:
+        state = row[2]
+        my_list.append(state)
+
+    print("{}".format(my_list), end=", ")
 
     cur.close()
     db.close()

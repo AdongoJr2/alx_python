@@ -27,8 +27,7 @@ if __name__ == "__main__":
 
     result = cur.fetchall()
 
-    for row in result:
-        print("{}".format(", ".join(row)))
+    print("{}".format(", ".join(result)))
 
     cur.close()
     db.close()

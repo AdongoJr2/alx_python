@@ -25,13 +25,13 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
-    try:
-        result = session.query(
-            State
-        ).order_by(
-            State.id.asc()
-        ).one()
+    result = session.query(
+        State
+    ).order_by(
+        State.id.asc()
+    ).first()
 
-        print("{}: {}".format(result.id, result.name))
-    except:
+    if result is None:
         print("Nothing")
+    else:
+        print("{}: {}".format(result.id, result.name))

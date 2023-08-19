@@ -14,7 +14,12 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-        """SELECT * from cities ORDER BY id ASC"""
+        """SELECT cities.id, cities.name, states.name  
+        FROM cities
+        INNER JOIN states
+        ON states.id = cities.state_id
+        ORDER BY cities.id ASC
+        """
     )
 
     result = cur.fetchall()

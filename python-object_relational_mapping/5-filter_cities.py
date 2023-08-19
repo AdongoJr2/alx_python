@@ -39,10 +39,11 @@ if __name__ == "__main__":
     my_list = []
 
     for row in result:
-        state = row[2]
+        state = row[1]
         my_list.append(state)
 
-    print("{}".format(my_list), end=", ")
+    # print("{}".format(my_list), end=", ")
+    print(", ".join(my_list))
 
     cur.close()
     db.close()

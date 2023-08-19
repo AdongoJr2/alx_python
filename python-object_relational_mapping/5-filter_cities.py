@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     res = map(result_formatter, result)
 
-    print(res)
+    print(tuple(res))
 
     cur.close()
     db.close()

@@ -27,7 +27,19 @@ if __name__ == "__main__":
 
     result = cur.fetchall()
 
-    print("{}".format(", ".join(result)))
+    def result_formatter(results):
+        for item in results:
+            print(item, end=", ")
+        print('')  # for new line
+
+    # for row in result:
+    #     state = row[2]
+    #     print("{}".format(state), end=", ")
+    # print("")
+    
+    res = map(result_formatter, result)
+    
+    print(res)
 
     cur.close()
     db.close()

@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-        "SELECT * from states WHERE name = BINARY '%s' ORDER BY id ASC",
+        """SELECT * from states WHERE name = BINARY %s ORDER BY id ASC""",
         (matches_key,)
     )
 

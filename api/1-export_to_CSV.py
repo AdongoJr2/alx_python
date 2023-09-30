@@ -19,24 +19,19 @@ if __name__ == "__main__":
     todo_response = requests.get(todo_url)
     todo_json_response = todo_response.json()
 
-    # open the file in the write mode
-    f = open("{}.csv".format(employee_id), "w")
+    with open('{}.csv'.format(employee_id), 'w', encoding='UTF8', newline='') as f:
+        # create the csv writer
+        writer = csv.writer(f, lineterminator="\n")
 
-    # create the csv writer
-    writer = csv.writer(f, lineterminator="\n")
+        for i in range(len(todo_json_response)):
+            task = todo_json_response[i]
 
-    for i in range(len(todo_json_response)):
-        task = todo_json_response[i]
+            task_values = [
+                "{}".format(employee_id),
+                "{}".format(user_name),
+                "{}".format(task.get("completed")),
+                "{}".format(task.get("title")),
+            ]
 
-        task_values = [
-            "{}".format(employee_id),
-            "{}".format(user_name),
-            "{}".format(task.get("completed")),
-            "{}".format(task.get("title")),
-        ]
-
-        # write a row to the csv file
-        writer.writerow(task_values)
-
-    # close the file
-    f.close()
+            # write a row to the csv file
+            writer.writerow(task_values)

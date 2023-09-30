@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """My module"""
 
-import sys
-import requests
 import csv
+import requests
+import sys
 
 if __name__ == "__main__":
     employee_id = sys.argv[1]
@@ -29,12 +29,12 @@ if __name__ == "__main__":
         task = todo_json_response[i]
 
         task_values = [
-          "{}".format(employee_id),
-          "{}".format(user_name),
-          "{}".format(task.get("completed")),
-          "{}".format(task.get("title")),
+            "{}".format(employee_id),
+            "{}".format(user_name),
+            "{}".format(task.get("completed")),
+            "{}".format(task.get("title")),
         ]
-        
+
         # write a row to the csv file
         writer.writerow(task_values)
 

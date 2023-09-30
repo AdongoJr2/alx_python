@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """My module"""
 
-import sys
 import requests
+import sys
 
 if __name__ == "__main__":
     employee_id = sys.argv[1]
